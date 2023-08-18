@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
 
-export const connectMongoDB = ()=> {
-    mongoose
+export const connectMongoDB = () => {
+  mongoose
     .connect(process.env.MONGO_URI, {
-        dbName: "backendapi",
+      dbName: "backendapi",
     })
-    .then(() => console.log("Database Connected"))
+    .then((c) => console.log(`Database Connected ${c.connection.host}`))
     .catch((e) => console.log(e));
 };
